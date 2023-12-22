@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:51:07 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/12/21 16:51:30 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/12/22 12:07:44 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (s == NULL)
 		return (NULL);
-	if (start >= ft_strlen(s)) 
+	if (start >= ft_strlen(s))
 	{
 		ret = malloc(1);
 		if (ret == NULL)
