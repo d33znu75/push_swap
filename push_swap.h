@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:49:05 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/12/22 10:31:10 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/12/22 21:32:42 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int		check_after_sign(char *str);
 int		check_double(long *list, int size);
 int		check_space(char *str);
 long	count_num(char *str);
+long	*parser(int argc, char *argv[]);
 
 #endif
