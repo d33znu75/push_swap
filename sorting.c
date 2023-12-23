@@ -1,0 +1,61 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sorting.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/23 15:42:07 by rhmimchi          #+#    #+#             */
+/*   Updated: 2023/12/23 21:20:26 by rhmimchi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+int	is_sorted(t_stack a)
+{
+	int	i;
+
+	i = 0;
+	while (i < a.len - 1)
+	{
+		if (a.list[i] > a.list[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+void	three_sort(t_stack a)
+{
+	if (a.list[2] > a.list[0] && a.list[2] > a.list[1])
+		sa(&a);
+	else if (a.list[0] > a.list[1] && a.list[0] > a.list[2])
+		ra(&a);
+	else if (a.list[1] > a.list[0] && a.list[1] > a.list[2])
+		rra(&a);
+	if (!is_sorted(a))
+		sa(&a);
+}
+
+void	_sort(t_stack a, t_stack b)
+{
+	long	min_a;
+	long	max_a;
+
+	min_a = find_min(&a);
+	max_a = find_max(&a);
+	while (a.len)
+	{
+		min_a = find_min(&a);
+		while (get_index(a, min_a) > a.len / 2)
+			rra(&a);
+		while (get_index(a, min_a) != 0)
+			ra(&a);
+		pb(&a, &b);
+	}
+	while (b.len)
+	{
+		pa(&a, &b);
+	}
+}
