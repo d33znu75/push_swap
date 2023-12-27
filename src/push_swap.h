@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:49:05 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/12/26 17:05:17 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/12/27 18:39:41 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_stack
 }	t_stack;
 
 //-----> chunks <-----//
-long	get_next_min(t_stack a, long min);
+long	get_next_min(t_stack *a, long min);
 void	b_sort(t_stack a, t_stack b);
 void	indexing_numbers(t_stack *a);
 void	chunks_5(t_stack a, t_stack b);
@@ -52,7 +52,8 @@ int		count_total(int argc, char *argv[]);
 
 //-----> parsing <-----//
 long	*parser(int argc, char *argv[]);
-void	list_fill(int argc, char *argv[], long *list, int count);
+void	list_fill(int argc, char *argv[], long *list);
+void	free_splitted(char **splitted);
 
 //-----> operations <-----//
 void	sa(t_stack *a);
@@ -70,7 +71,7 @@ void	pb(t_stack *a, t_stack *b);
 //-----> stack <-----//
 long	find_min(t_stack *a);
 long	find_max(t_stack *a);
-long	get_index(t_stack t, long num);
+long	get_index(t_stack *t, long num);
 
 //-----> sorting <-----//
 void	three_sort(t_stack a);

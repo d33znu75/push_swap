@@ -6,26 +6,48 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 16:45:11 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/12/26 17:39:38 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/12/27 18:38:14 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	get_next_min(t_stack a, long min)
+long	get_next_min(t_stack *a, long min)
 {
 	int		i;
 	long	next_min;
 
 	i = 0;
-	next_min = find_max(&a);
-	while (i < a.len)
+	next_min = find_max(a);
+	while (i < a->len)
 	{
-		if (a.list[i] < next_min && a.list[i] > min)
-			next_min = a.list[i];
+		if (a->list[i] < next_min && a->list[i] > min)
+			next_min = a->list[i];
 		i++;
 	}
 	return (next_min);
+}
+
+void	_indexing_numbers(t_stack *a)
+{
+	int		i;
+	long	min;
+	long	temp[300];
+
+	i = 0;
+	min = find_min(a);
+	while (i < a->len)
+	{
+		temp[get_index(a, min)] = i;
+		min = get_next_min(a, min);
+		i++;
+	}
+	i = 0;
+	while (i < a->len)
+	{
+		a->list[i] = temp[i];
+		i++;
+	}
 }
 
 void	indexing_numbers(t_stack *a)
@@ -36,13 +58,13 @@ void	indexing_numbers(t_stack *a)
 
 	i = 0;
 	min = find_min(a);
-	*temp = (long *)malloc(sizeof(long) * a->len);
+	temp = (long *)malloc(sizeof(long) * a->len);
 	if (temp == NULL)
 		return ;
 	while (i < a->len)
 	{
-		temp[get_index(*a, min)] = i;
-		min = get_next_min(*a, min);
+		temp[get_index(a, min)] = i;
+		min = get_next_min(a, min);
 		i++;
 	}
 	i = 0;
@@ -61,7 +83,7 @@ void	chunks_5(t_stack a, t_stack b)
 
 	i = 0;
 	j = a.len;
-	indexing_numbers(&a);
+	_indexing_numbers(&a);
 	while (i <= j)
 	{
 		while (find_min(&a) < i && a.len)

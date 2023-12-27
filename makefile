@@ -6,7 +6,7 @@
 #    By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/21 16:48:32 by rhmimchi          #+#    #+#              #
-#    Updated: 2023/12/26 17:15:32 by rhmimchi         ###   ########.fr        #
+#    Updated: 2023/12/27 18:39:30 by rhmimchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC = ./src/ft_atoi.c ./src/ft_split.c ./src/ft_substr.c ./src/ft_strlen.c ./src
 
 OBJ = $(SRC:.c=.o)
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror #-fsanitize=address
 NAME = push_swap
 
 all: $(NAME)

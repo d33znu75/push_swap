@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 21:15:47 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/12/24 23:01:00 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/12/27 17:06:31 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ long	find_max(t_stack *a)
 	return (max);
 }
 
-long	get_index(t_stack t, long num)
+long	get_index(t_stack *t, long num)
 {
 	int	index;
 
 	index = 0;
-	while (t.list[index] != num)
+	while (t->list[index] != num)
 		index++;
 	return (index);
 }

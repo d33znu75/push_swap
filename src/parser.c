@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 11:42:39 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/12/26 17:39:49 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/12/27 13:46:33 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,11 @@ void	error_check2(long *list, int count)
 	}
 }
 
-void	list_fill(int argc, char *argv[], long *list, int count)
+void	list_fill(int argc, char *argv[], long *list)
 {
 	int		i;
 	int		j;
+	int		c;
 	char	**splitted;
 
 	i = 1;
@@ -87,16 +88,20 @@ void	list_fill(int argc, char *argv[], long *list, int count)
 	while (i < argc)
 	{
 		error_check(argv[i], list);
+		c = 0;
 		splitted = ft_split(argv[i], ' ');
-		while (*splitted)
+		if (!splitted)
+			return ;
+		while (splitted[c])
 		{
-			list[j] = ft_atoi(*splitted);
-			splitted++;
+			list[j] = ft_atoi(splitted[c]);
+			c++;
 			j++;
 		}
+		free_splitted(splitted);
+		splitted = NULL;
 		i++;
 	}
-	list[count] = '\0';
 }
 
 long	*parser(int argc, char *argv[])
@@ -112,8 +117,8 @@ long	*parser(int argc, char *argv[])
 		count += count_num(argv[i]);
 		i++;
 	}
-	list = (long *)malloc((count) * sizeof(long));
-	list_fill(argc, argv, list, count);
+	list = (long *)malloc((count + 1) * sizeof(long));
+	list_fill(argc, argv, list);
 	error_check2(list, count);
 	return (list);
 }

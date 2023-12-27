@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:42:07 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/12/26 17:40:03 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/12/27 14:36:00 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,17 @@ void	_sort(t_stack a, t_stack b)
 
 	min_a = find_min(&a);
 	max_a = find_max(&a);
-	while (a.len)
+	while (a.len >= 4)
 	{
 		min_a = find_min(&a);
-		while (get_index(a, min_a) > a.len / 2)
+		while (get_index(&a, min_a) > a.len / 2)
 			rra(&a);
-		while (get_index(a, min_a) != 0)
+		while (get_index(&a, min_a) != 0)
 			ra(&a);
 		pb(&a, &b);
 	}
 	while (b.len)
-	{
 		pa(&a, &b);
-	}
 }
 
 void	b_sort(t_stack a, t_stack b)
@@ -68,9 +66,9 @@ void	b_sort(t_stack a, t_stack b)
 	while (b.len)
 	{
 		max_b = find_max(&b);
-		while (get_index(b, max_b) != 0)
+		while (get_index(&b, max_b) != 0)
 		{
-			if (get_index(b, max_b) > b.len / 2)
+			if (get_index(&b, max_b) > b.len / 2)
 				rrb(&b);
 			else
 				rb(&b);

@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:48:02 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/12/21 18:40:50 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/12/27 12:45:58 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,21 @@ static void	ft_free(char **ret, int i)
 		i--;
 	}
 	free(ret);
+}
+
+void	free_splitted(char **splitted)
+{
+	int	i;
+
+	if (!splitted)
+		return ;
+	i = 0;
+	while (splitted[i])
+	{
+		free(splitted[i]);
+		i++;
+	}
+	free(splitted);
 }
 
 static char	**s_plit(char const *s, char c, char **ret, const char *start)
