@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 10:11:54 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/12/22 10:59:38 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:37:24 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,7 @@ long	count_num(char *str)
 		{
 			count++;
 			while (*str >= '0' && *str <= '9')
-			{
 				str++;
-			}
 		}
 		else
 			str++;

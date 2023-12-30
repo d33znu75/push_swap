@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:49:05 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/12/27 18:39:41 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/12/30 16:23:56 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,6 @@ long	get_index(t_stack *t, long num);
 void	three_sort(t_stack a);
 int		is_sorted(t_stack a);
 void	_sort(t_stack a, t_stack b);
+void	_indexing_numbers(t_stack *a);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 11:42:39 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/12/27 13:46:33 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:46:18 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ int	check_digit_sign(char *str)
 		while (*str == ' ')
 			str++;
 		if (*str == '-' || *str == '+')
-		{
 			str++;
-		}
 		else if (*str < '0' || *str > '9')
 		{
 			diff++;
