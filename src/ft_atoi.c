@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:48:23 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/12/22 10:03:46 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2024/01/04 21:47:25 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static long	int	ft_at(const char *str, long int i, long int num, long int num2)
 		num2 = (num * 10) + (int)(str[i] - 48);
 		if ((num2 * nega) > INT_MAX || (num2 * nega) < INT_MIN)
 		{
-			write(2, "Error\n", 6);
+			write(1, "Error\n", 6);
 			exit(1);
 		}
 		num = num2;

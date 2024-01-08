@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 11:42:39 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/12/28 15:46:18 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2024/01/02 16:49:12 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,19 +102,10 @@ void	list_fill(int argc, char *argv[], long *list)
 	}
 }
 
-long	*parser(int argc, char *argv[])
+long	*parser(int argc, char *argv[], int count)
 {
-	int		i;
 	long	*list;
-	int		count;
 
-	i = 1;
-	count = 0;
-	while (i < argc)
-	{
-		count += count_num(argv[i]);
-		i++;
-	}
 	list = (long *)malloc((count + 1) * sizeof(long));
 	list_fill(argc, argv, list);
 	error_check2(list, count);

@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:49:05 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/12/30 16:23:56 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2024/01/03 22:13:54 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 # include <limits.h>
 
 typedef struct s_stack
@@ -51,7 +50,7 @@ long	count_num(char *str);
 int		count_total(int argc, char *argv[]);
 
 //-----> parsing <-----//
-long	*parser(int argc, char *argv[]);
+long	*parser(int argc, char *argv[], int count);
 void	list_fill(int argc, char *argv[], long *list);
 void	free_splitted(char **splitted);
 
@@ -76,7 +75,7 @@ long	get_index(t_stack *t, long num);
 //-----> sorting <-----//
 void	three_sort(t_stack a);
 int		is_sorted(t_stack a);
-void	_sort(t_stack a, t_stack b);
+void	five_sort(t_stack a, t_stack b);
 void	_indexing_numbers(t_stack *a);
 
 #endif

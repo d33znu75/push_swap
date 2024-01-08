@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:42:07 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/12/28 17:42:53 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2024/01/03 22:14:24 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,12 @@ void	three_sort(t_stack a)
 		sa(&a);
 }
 
-void	_sort(t_stack a, t_stack b)
+void	five_sort(t_stack a, t_stack b)
 {
 	long	min_a;
-	long	max_a;
 
 	min_a = find_min(&a);
-	max_a = find_max(&a);
-	while (a.len >= 4)
+	while (a.len - 3)
 	{
 		min_a = find_min(&a);
 		while (get_index(&a, min_a) > a.len / 2)
@@ -54,6 +52,7 @@ void	_sort(t_stack a, t_stack b)
 			ra(&a);
 		pb(&a, &b);
 	}
+	three_sort(a);
 	while (b.len)
 		pa(&a, &b);
 }
