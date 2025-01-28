@@ -26,6 +26,6 @@ My Push Swap worst cases:
 - 500 numbers => less than 6500 moves
 
 # Preview of my sorting algorithm:
-![](https://cdn.discordapp.xyz/attachments/1067452256686981161/1195010688981139456/ScreenRecording2023-12-26at5.58.37PM-ezgif.com-video-to-gif-converter.gif)
+![](https://i.imgur.com/B5ph9KH.gif)
 
 Sorting Algorithm ==> Chunks (8 Chunks in less than 300 numbers and 15 Chunks in more than 300 numbers)
